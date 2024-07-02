@@ -29,7 +29,7 @@ public class ProductsDapperRepository : IProductsRepository
         using (var connection = new SqlConnection(_connectionString))
         {
             connection.Open();
-            return await connection.QueryFirstOrDefault("SELECT FROM Products WHERE Name = @Name", new { Name = name });
+            return await connection.QueryFirstOrDefault("SELECT * FROM Products WHERE Name = @Name", new { Name = name });
         }
     }
 
@@ -51,7 +51,7 @@ public class ProductsDapperRepository : IProductsRepository
         }
     }
 
-    public async Task DeleteProduct(Guid productId)
+    public async Task DeleteProduct(int productId)
     {
         using (var connection = new SqlConnection(_connectionString))
         {

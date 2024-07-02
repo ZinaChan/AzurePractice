@@ -56,7 +56,7 @@ namespace AzurePractice.Controllers
             }
         }
         [HttpPut("{id}")]
-        public async Task<IActionResult> Update(Guid id, Product updatedProduct)
+        public async Task<IActionResult> Update(int id, Product updatedProduct)
         {
             if (id != updatedProduct.Id)
             {
@@ -75,7 +75,7 @@ namespace AzurePractice.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id)
+        public async Task<IActionResult> Delete(int id)
         {
             try
             {
